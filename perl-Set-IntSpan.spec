@@ -1,18 +1,18 @@
-%define module  Set-IntSpan
-%define name    perl-%{module}
-%define version 1.13
-%define release %mkrel 2
+%define upstream_name    Set-IntSpan
+%define upstream_version 1.13
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           perl-%{upstream_name}
+Version:        %perl_convert_version %{upstream_version}
+Release:        %mkrel 1
+
 Summary:        Manage sets of integers
-License:        GPL or Artistic
+License:        GPL+ or Artistic
 Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Set/%{module}-%{version}.tar.gz
-Buildarch:	noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:        http://www.cpan.org/modules/by-module/Set/%{upstream_name}-%{upstream_version}.tar.gz
+
+Buildarch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Set::IntSpan manages sets of integers.  It is optimized for sets that
@@ -28,7 +28,7 @@ set operations can be performed directly on the encoded
 representation.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
