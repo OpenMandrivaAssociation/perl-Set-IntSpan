@@ -1,18 +1,18 @@
 %define upstream_name    Set-IntSpan
 %define upstream_version 1.16
 
-Name:           perl-%{upstream_name}
-Version:        %perl_convert_version %{upstream_version}
-Release:        %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:        Manage sets of integers
-License:        GPL+ or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{upstream_name}
-Source0:        http://www.cpan.org/modules/by-module/Set/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Manage sets of integers
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Set/%{upstream_name}-%{upstream_version}.tar.gz
 
-Buildarch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildArch: noarch
 
 %description
 Set::IntSpan manages sets of integers.  It is optimized for sets that
@@ -31,21 +31,41 @@ representation.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%__make test
+make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{perl_vendorlib}/Set/IntSpan.pm
 %{_mandir}/*/*
+
+
+%changelog
+* Fri Nov 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1.160.0-1mdv2011.0
++ Revision: 596643
+- update to 1.16
+
+* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 1.140.0-1mdv2011.0
++ Revision: 552631
+- update to 1.14
+
+* Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 1.130.0-1mdv2010.0
++ Revision: 401610
+- rebuild using %%perl_convert_version
+- fixed license field
+
+* Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 1.13-2mdv2010.0
++ Revision: 375902
+- rebuild
+
+* Sun May 03 2009 Funda Wang <fwang@mandriva.org> 1.13-1mdv2010.0
++ Revision: 370912
+- import perl-Set-IntSpan
+
+
