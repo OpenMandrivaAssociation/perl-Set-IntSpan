@@ -1,15 +1,15 @@
 %define upstream_name    Set-IntSpan
-%define upstream_version 1.16
+%define upstream_version 1.19
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Version:	%perl_convert_version 1.19
+Release:	1
 
 Summary:	Manage sets of integers
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Set/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Set/Set-IntSpan-1.19.tar.gz
 
 BuildRequires:	perl-devel
 BuildArch: noarch
@@ -67,5 +67,6 @@ make test
 * Sun May 03 2009 Funda Wang <fwang@mandriva.org> 1.13-1mdv2010.0
 + Revision: 370912
 - import perl-Set-IntSpan
+
 
 

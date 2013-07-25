@@ -1,2 +1,4 @@
+removed_sources:
+  Set-IntSpan-1.16.tar.gz: 1e5b17b31940b21ede89fcd16ea61b26c808fdf3
 sources:
-  "Set-IntSpan-1.16.tar.gz": 1e5b17b31940b21ede89fcd16ea61b26c808fdf3
+  Set-IntSpan-1.19.tar.gz: bfef262e876144c5fe355277b94144b20e7ddfaa
