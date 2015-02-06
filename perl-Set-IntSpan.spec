@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 1.19
-Release:	2
+Release:	3
 
 Summary:	Manage sets of integers
 License:	GPL+ or Artistic
