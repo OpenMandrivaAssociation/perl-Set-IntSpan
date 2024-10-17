@@ -8,7 +8,7 @@ Release:	3
 Summary:	Manage sets of integers
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Set/Set-IntSpan-1.19.tar.gz
 
 BuildRequires:	perl-devel
